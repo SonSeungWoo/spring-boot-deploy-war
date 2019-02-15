@@ -13,6 +13,7 @@ mvn install:install-file -Dfile=lib/com/custom/xmlparserv2-12.1.0.2.jar -DgroupI
 ## spring boot deploy war
 
 #### war로 배포할시 xmlparserv2 관련에러가 발생함 tomcat 설정따로 해줘야함
+java.lang.SecurityException: org.xml.sax.SAXNotRecognizedException: Feature: http://apache.org/xml/features/allow-java-encodings 에러발생
 
 #### TOMCAT_HOME/conf/catalina.properties에 아래와 같이 추가
 
