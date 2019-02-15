@@ -1,4 +1,4 @@
-## mybatis oracle procedure 설정
+## mybatis oracle procedure xmltype 설정
 
 #### mvn install
 
