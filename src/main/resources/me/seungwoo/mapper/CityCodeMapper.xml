@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.seungwoo.mapper.CityCodeMapper">
+    <resultMap id="cityMap" type="java.util.HashMap"/>
+
+    <select id="findByCityCode" resultType="cityCode">
+        SELECT *
+          FROM BTMS.BS_CITY_CODE
+         WHERE CITY_CODE = #{cityCode}
+    </select>
+
+    <select id="findAll" resultType="cityCode">
+        SELECT * FROM BTMS.BS_CITY_CODE WHERE <![CDATA[ ROWNUM <= 15 ]]>
+    </select>
+
+    <insert id="save">
+
+    </insert>
+
+    <select id="update">
+
+    </select>
+
+    <select id="delete">
+
+    </select>
+
+    <select id="selectCityCode" statementType="CALLABLE" parameterType="java.util.HashMap">
+    { CALL PKG_TEST.XML_SELECT(
+        #{serviceName, mode=IN, jdbcType=VARCHAR},
+        #{inputString, mode=IN, jdbcType=NCLOB},
+        #{result, mode=OUT, jdbcType=SQLXML, javaType=String, resultMap=cityMap},
+        #{xmlString, mode=OUT, jdbcType=SQLXML, javaType=String, resultMap=cityMap})
+    }
+    </select>
+
+</mapper>
