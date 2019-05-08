@@ -48,4 +48,14 @@ public class HotelController {
                         .build());
     }
 
+    @GetMapping("/test")
+    public ResponseEntity<ExResponse> getTest(){
+        return ResponseEntity.ok(
+                new ExResponse
+                        .Builder<>(null)
+                        .setIsSucceed(true)
+                        .setIsWarning(false)
+                        .build());
+    }
+
 }
